@@ -24,6 +24,6 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 
-const listener = app.listen(8080, function() {
+const listener = app.listen(process.env.PORT, function() {
   console.log("Listening on port " + listener.address().port);
 });

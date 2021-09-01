@@ -4,8 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "dev": "node app.js localhost 8080",
-    "start": "nodemon app.js localhost 8080"
+    "dev": "nodemon app.js localhost 8080",
+    "start": "node app.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
