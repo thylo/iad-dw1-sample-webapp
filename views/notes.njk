@@ -1,0 +1,28 @@
+{% extends "layouts/_base.njk" %}
+
+{% block content %}
+    <h3>Description</h3>
+    <p>Tout le code HTML de cette page est envoyé au navigateur lors de la requête initiale.</p>
+    <h4>Notes</h4>
+
+    <form method="get" action="/notes">
+        <label for="search">Rechercher dans les notes</label>
+        <input type="search" placeholder="ex: plut" id="search" name="term"/>
+        <input type="submit" value="Rechercher"/>
+    </form>
+
+    {% if term %}
+        <p><i>Affichage de {{ notes | length}} {{ "notes" if notes.length > 1 else "note"}} correspondant au terme: "{{ term }}"</i></p>
+    {% endif %}
+
+    <ul>
+        {% for note in notes %}
+            <li><h5>{{ note.content }}</h5><small>{{ note.created_at }}</small></li>
+        {% endfor %}
+    </ul>
+    <form method="post" action="/notes">
+        <label for="content">Que voulez-vous dire ?</label>
+        <input type="text" placeholder="ex: plut" id="content" name="content"/>
+        <input type="submit" value="Créer une nouvelle note"/>
+    </form>
+{% endblock %}

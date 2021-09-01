@@ -1,13 +1,13 @@
 body {
-  padding: 50px;
-  line-height: 1.5;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    padding: 50px;
+    line-height: 1.5;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
-  color: orangered;
+    color: orangered;
 }
 
 .img {
-  max-width: 100%;
+    max-width: 100%;
 }
