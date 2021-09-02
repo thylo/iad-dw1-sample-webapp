@@ -59,7 +59,7 @@ function updateMeta(notes, term) {
 
 function onSearchFormSubmit(e) {
   e.preventDefault();
-  const searchInputElement = e.target.querySelector("#search");
+  const searchInputElement = e.target.querySelector("#js-search-input");
   const searchTerm = searchInputElement.value;
   const filteredNotes = notes.filter((note) =>
     note.content.includes(searchTerm)
