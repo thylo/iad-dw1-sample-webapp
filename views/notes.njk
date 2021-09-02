@@ -1,13 +1,20 @@
 {% extends "layouts/_base.njk" %}
 
 {% block content %}
+
     <h3>Description</h3>
-    <p>Tout le code HTML de cette page est envoyé au navigateur lors de la requête initiale.</p>
+    <p>Le code HTML de cette page est généré par le serveur en fonction de variables et est envoyé au navigateur lors de la requête initiale.</p>
+    <figure>
+        <blockquote>
+            <p>{{ joke }}</p>
+        </blockquote>
+        <figcaption>—Chuck Norris API, <cite><a href="https://api.chucknorris.io/">https://api.chucknorris.io/</a></cite></figcaption>
+    </figure>
     <h4>Notes</h4>
 
     <form method="get" action="/notes">
         <label for="search">Rechercher dans les notes</label>
-        <input type="search" placeholder="ex: plut" id="search" name="term"/>
+        <input type="search" placeholder="ex: plut" id="search" name="term" required/>
         <input type="submit" value="Rechercher"/>
     </form>
 

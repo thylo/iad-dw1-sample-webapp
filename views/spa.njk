@@ -1,0 +1,38 @@
+{% extends "layouts/_base.njk" %}
+
+{% block content %}
+
+    <h3>Description</h3>
+    <p>Le serveur renvoie une page HTML servant de coquille à une application Javascript executée coté navigateur</p>
+    <figure>
+        <blockquote id="js-blockquote">
+            <p>Loading</p>
+        </blockquote>
+        <figcaption>—Chuck Norris API, <cite><a href="https://api.chucknorris.io/">https://api.chucknorris.io/</a></cite></figcaption>
+    </figure>
+    <h4>Notes</h4>
+
+    <form id="js-search-form">
+        <label for="js-search-input">Rechercher dans les notes</label>
+        <input type="search" placeholder="ex: plut" id="js-search-input" name="term"/>
+        <input type="submit" value="Rechercher"/>
+    </form>
+
+    <div id="js-search-meta"></div>
+
+    <ul id="js-search-list-container">
+        Loading
+    </ul>
+
+    <form id="js-create-form">
+        <label for="content">Que voulez-vous dire ?</label>
+        <input type="text" placeholder="ex: plut" id="content" name="content" required/>
+        <input type="submit" value="Créer une nouvelle note"/>
+    </form>
+
+    <template id="js-note-template">
+        <li><h5  class="js-note-template-title">{{ note.content }}</h5><small class="js-note-template-date">{{ note.created_at }}</small></li>
+    </template>
+
+    <script src="/scripts/spa.js"></script>
+{% endblock %}

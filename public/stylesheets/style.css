@@ -8,6 +8,28 @@ a {
     color: orangered;
 }
 
+blockquote {
+    margin: 0;
+}
+
+blockquote p {
+    padding: 15px;
+    background: #eee;
+    border-radius: 5px;
+}
+
+blockquote p::before {
+    content: '\201C';
+}
+
+blockquote p::after {
+    content: '\201D';
+}
+figcaption{
+    font-size: .8rem;
+    text-align: right;
+}
 .img {
     max-width: 100%;
 }
+

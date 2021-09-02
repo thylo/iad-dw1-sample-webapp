@@ -1,4 +1,5 @@
 const express = require("express");
+const fetchRandomJoke = require("../helpers/joke");
 const router = express.Router();
 
 const data = [
@@ -17,20 +18,47 @@ const data = [
   },
 ];
 
-router.get("/notes", function (req, res, next) {
+const insertNote = (content) => {
+  const createdNote = { content, created_at: Date.now() };
+  data.push(createdNote);
+  return createdNote;
+};
+
+router.get("/notes", async function (req, res, next) {
+  const joke = await fetchRandomJoke();
   const notes = req.query.term
     ? data.filter((note) => note.content.includes(req.query.term))
     : data;
   res.render("notes", {
     notes,
+    joke,
     title: 'Application web "traditionelle"',
     term: req.query.term,
   });
 });
 
 router.post("/notes", function (req, res, next) {
-  data.push({ content: req.body.content, created_at: Date.now() });
+  insertNote(req.body.content);
   res.redirect("/notes");
+});
+
+router.get("/spa", function (req, res, next) {
+  return res.render("spa", {
+    title: "Single page application",
+  });
+});
+
+router.get("/api/notes", function (req, res, next) {
+  return res.json(data);
+});
+
+router.post("/api/notes", function (req, res, next) {
+  const content = req.body.content;
+  if (!content) {
+    res.status(401);
+    return res.json({ message: 'Le champ "content" est obligatoire' });
+  }
+  return res.json(insertNote(content));
 });
 
 module.exports = router;
