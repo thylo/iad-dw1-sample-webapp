@@ -28,8 +28,8 @@ blockquote p::after {
 figcaption{
     font-size: .8rem;
     text-align: right;
+    color: #666;
 }
 .img {
     max-width: 100%;
 }
-
