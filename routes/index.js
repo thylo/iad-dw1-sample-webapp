@@ -24,6 +24,29 @@ const insertNote = (content) => {
   return createdNote;
 };
 
+const getFrontPageHtml = (noteCount) => {
+  return(`
+    <!DOCTYPE html>
+    <html>
+      <head>
+      </head>
+      <body>
+        <div class='container'>
+          <h1>Full stack example app</h1>
+          <p>number of notes created ${noteCount}</p>
+          <a href='/notes'>notes</a>
+          <img src='022.jpg' width='200' />
+        </div>
+      </body>
+    </html>
+`)
+}
+
+app.get('/basic', (req, res) => {
+  const page = getFrontPageHtml(data.length)
+  res.send(page)
+})
+
 router.get("/notes", async function (req, res, next) {
   const joke = await fetchRandomJoke();
   const notes = req.query.term
