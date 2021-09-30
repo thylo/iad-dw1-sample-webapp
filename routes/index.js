@@ -42,7 +42,7 @@ const getFrontPageHtml = (noteCount) => {
 `)
 }
 
-app.get('/basic', (req, res) => {
+router.get('/basic', (req, res) => {
   const page = getFrontPageHtml(data.length)
   res.send(page)
 })
