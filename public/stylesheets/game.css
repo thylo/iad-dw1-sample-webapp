@@ -1,0 +1,137 @@
+:root {
+  --shadow-color: 217deg 100% 7%;
+  --shadow-elevation-low:
+          0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.34),
+          0.4px 0.8px 1px -1.2px hsl(var(--shadow-color) / 0.34),
+          1px 2px 2.5px -2.5px hsl(var(--shadow-color) / 0.34);
+  --shadow-elevation-medium:
+          0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.36),
+          0.8px 1.6px 2px -0.8px hsl(var(--shadow-color) / 0.36),
+          2.1px 4.1px 5.2px -1.7px hsl(var(--shadow-color) / 0.36),
+          5px 10px 12.6px -2.5px hsl(var(--shadow-color) / 0.36);
+  --shadow-elevation-high:
+          0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.34),
+          1.5px 2.9px 3.7px -0.4px hsl(var(--shadow-color) / 0.34),
+          2.7px 5.4px 6.8px -0.7px hsl(var(--shadow-color) / 0.34),
+          4.5px 8.9px 11.2px -1.1px hsl(var(--shadow-color) / 0.34),
+          7.1px 14.3px 18px -1.4px hsl(var(--shadow-color) / 0.34),
+          11.2px 22.3px 28.1px -1.8px hsl(var(--shadow-color) / 0.34),
+          17px 33.9px 42.7px -2.1px hsl(var(--shadow-color) / 0.34),
+          25px 50px 62.9px -2.5px hsl(var(--shadow-color) / 0.34);
+}
+
+body {
+  padding: 50px;
+  line-height: 1.5;
+  font: 16px "Helvetica Neue", Helvetica, sans-serif;
+  color:#efe;
+  font-weight: 300;
+}
+
+footer{
+  color: white;
+}
+
+.l-game-welcome {
+  background-color: #062453
+}
+
+.l-container {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+}
+
+.l-game-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.l-game {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+}
+
+.l-game__left {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.l-game__image {
+  width: 320px;
+  height: auto;
+  padding: .5rem;
+  background: white;
+  transform: rotate(-5deg);
+  position: relative;
+  display: block;
+  box-shadow: var(--shadow-elevation-medium);
+}
+
+.l-game__image:before {
+  content:"";
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  transform: rotate(2deg);
+  box-shadow: var(--shadow-elevation-low);
+}
+
+.c-logo-iad{
+  fill: #fefefe;
+}
+
+.c-hero {
+  text-align: center;
+}
+
+.c-hero__title {
+  margin-bottom: 4rem;
+  font-weight: 300;
+  font-size: 1.8rem;
+}
+
+.c-btn {
+  border: none;
+  margin: 4rem 0 0 0;
+  background: white;
+  color: #333;
+  display: inline-block;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  border-radius: 3rem;
+  box-shadow: var(--shadow-elevation-medium);
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.c-horizontal-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.c-radio-field {
+  padding: .5rem 1rem;
+  display: block;
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: var(--shadow-elevation-low);
+  color: #333;
+}
+
+.c-radio-field:hover {
+  opacity: 0.8;
+}

@@ -1,0 +1,25 @@
+{% set pageClass = "l-game-welcome" %}
+
+{% extends "layouts/_base.njk" %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="/stylesheets/game.css"/>
+{% endblock %}
+
+{% block content %}
+    <div class="l-game-container">
+        <div class="c-hero">
+            <h1 class="c-hero__title">Bienvenue sur le plus chouette jeu de l'univers</h1>
+            <div>
+                <div class="hero">
+                    <p>L'esprit de l'IAD se perd. En ces temps troublés de COVID, il est difficile de reconnaitre ses
+                        condisciples de l'IAD</p>
+                    <p>Le cours de Web Dynamique va rémédier à ça</p>
+                    <a href="/the-great-iad-game/game" class="c-btn">Cool, c'est parti !</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+

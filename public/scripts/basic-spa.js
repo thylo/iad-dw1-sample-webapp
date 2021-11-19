@@ -9,7 +9,7 @@ xhttp.onreadystatechange = function () {
     ul.setAttribute("class", "notes");
 
     data.forEach(function (note) {
-      var li = document.createElement("li");
+      const li = document.createElement("li");
 
       ul.appendChild(li);
       li.appendChild(document.createTextNode(note.content));

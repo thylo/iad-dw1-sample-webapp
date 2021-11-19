@@ -6,7 +6,8 @@ const logger = require("morgan");
 const nunjucks = require("nunjucks");
 
 const indexRouter = require("./routes/index");
-const usersRouter = require("./routes/users");
+const parlementRouter = require("./routes/parlement");
+const gameRouter = require("./routes/game");
 
 const app = express();
 
@@ -23,7 +24,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
-app.use("/users", usersRouter);
+app.use("/parlement", parlementRouter);
+app.use("/the-great-iad-game", gameRouter);
 
 const listener = app.listen(process.env.PORT, function() {
   console.log("Listening on port " + listener.address().port);

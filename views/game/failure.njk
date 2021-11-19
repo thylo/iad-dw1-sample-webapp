@@ -1,0 +1,21 @@
+{% set pageClass = "l-game-welcome" %}
+
+{% extends "layouts/_base.njk" %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="/stylesheets/game.css"/>
+{% endblock %}
+
+{% block content %}
+    <div class="l-game-container">
+        <div class="c-hero">
+            <h1 class="c-hero__title">Tu es vraiment nul, il s'agissait de </h1>
+            <div>
+                {{ student.firstName }} {{ student.lastName }} en {{ student.class }}
+            </div>
+            <a href="/the-great-iad-game/game" class="c-btn">J'en veux plus !</a>
+        </div>
+    </div>
+{% endblock %}
+
+

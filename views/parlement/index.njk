@@ -1,0 +1,25 @@
+{% extends "layouts/_base.njk" %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="/stylesheets/parlement.css"/>
+{% endblock %}
+
+{% block content %}
+
+
+    <ul>
+        {% for depute in deputes %}
+            {% if depute.dep_parti === 'MR' %}
+            <li class="civ-{{ depute.dev_civ }}">
+                <img src="{{ depute.dep_photo }}">
+                <div>{{ depute.dep_nomcomplet }}</div>
+            </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+
+
+
+{% endblock %}
+
+

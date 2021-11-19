@@ -1,0 +1,37 @@
+{% set pageClass = "l-game-welcome" %}
+
+{% extends "layouts/_base.njk" %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="/stylesheets/game.css"/>
+{% endblock %}
+
+{% block content %}
+    <div class="l-game-container">
+        <form class="c-hero" method="post">
+            <input type="hidden" name="student_id" value="{{ student.id }}">
+            <h1 class="c-hero__title">Dans quelle classe est cet élève ?</h1>
+            <div class="l-game">
+                <div class="l-game__left">
+                    <img class="l-game__image" src="https://www.proeco.iad-arts.be/proeco/PROECO_PHOTO/{{ student.photo }}" alt="">
+                </div>
+                <div>
+                    <ul class="c-horizontal-list">
+                        {% for option in options %}
+                            <li class="c-horizontal-list__item">
+                                <label class="c-radio-field" for="{{ option }}"><span>{{ option }}</span>
+                                    <input type="radio" value="{{ option }}" id="{{ option }}" name="class"/>
+                                </label>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    <div class="c-input-submit">
+                        <input type="submit" class="c-btn" value="J'en suis sur..."/>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}
+
+
